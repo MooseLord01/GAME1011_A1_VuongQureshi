@@ -10,23 +10,21 @@
 class Person
 {
 private:
-	int age;              //Holds the age of the person
-	std::string name;     //Holds the name of the person
+	int age;              // This will hold the age of the person
+	std::string name;     // This will hold the name of the person
 
-public:
-	
+public:	
 	Person();
-	Person(const std::string name, int age);
+	Person(const std::string name);
 	virtual ~Person();
-	virtual void DisplayInformation() = 0;
+	virtual void getInformation() = 0;
 	
 	//Setters
 	void setAge(int age);
 	void setName(const std::string name);
 
 	//Getters
-	int getAge() const;
-	std::string getName() const;
-
+	const int getAge();
+	const std::string getName();
 };
 #endif

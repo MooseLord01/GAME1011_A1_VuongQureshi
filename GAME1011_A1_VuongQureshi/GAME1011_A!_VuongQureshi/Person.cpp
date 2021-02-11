@@ -2,20 +2,22 @@
 
 Person::Person() { } // Default constructor
 
-Person::Person(const std::string name, int age)
-{
+Person::Person(const std::string name) {
+	srand(time(NULL));
+	
 	this->name = name;
-	this->age = age;
+
+	// Randomly set the student's age between 17-27
+	int temp = rand() % 10 + 17;
+	this->age = temp;
 }
 
-Person::~Person()
-{
-}
+Person::~Person() {}
 
-// Setter
-void Person::setAge(int age) { this->age = age; }
+// Setters
+void Person::setAge(const int age) { this->age = age; }
 void Person::setName(const std::string name) { this->name = name; }
 
-// Getter
-int Person::getAge() const { return age; }
-std::string Person::getName() const { return name; }
+// Getters
+const int Person::getAge() { return age; }
+const std::string Person::getName() { return name; }

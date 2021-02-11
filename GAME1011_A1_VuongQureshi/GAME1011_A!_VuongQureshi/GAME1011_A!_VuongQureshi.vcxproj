@@ -144,6 +144,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Survey.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GamingStudent.h" />

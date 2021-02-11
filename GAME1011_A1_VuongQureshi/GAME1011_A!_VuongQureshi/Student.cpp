@@ -3,7 +3,7 @@
 Student::Student() { } // Default constructor
 
 // Non-default constructor
-Student::Student(std::string name, int age) : Person(name, age) {
+Student::Student(std::string name) : Person(name) {
 	srand(std::time(NULL));
 
 	// Randomly set collegeName and programName to a random value taken from their respective lists
@@ -15,15 +15,17 @@ Student::Student(std::string name, int age) : Person(name, age) {
 
 	// Randomly assign the current semester number to the student
 	temp = rand()% 4 + 1; 
-	this->semesterNum = semesterNum;
+	this->semesterNum = temp;
 }
 
 // Setters
 void Student::setCollegeName(const std::string collegeName) { this->collegeName = collegeName; }
 void Student::setProgramName(const std::string programName) { this->programName = programName; }
 void Student::setSemesterName(const int semesterNum) { this->semesterNum = semesterNum; }
+void Student::setGamer(const bool status) { isGamer = status; }
 
 // Getters
-std::string Student::getCollegeName(std::string college) { return collegeName; }
-std::string Student::getProgramName(std::string program) { return programName; }
-int Student::getSemesterNum() { return semesterNum; }
+const std::string Student::getCollegeName() { return collegeName; }
+const std::string Student::getProgramName() { return programName; }
+const int Student::getSemesterNum() { return semesterNum; }
+const bool Student::getGamer() { return isGamer; }
