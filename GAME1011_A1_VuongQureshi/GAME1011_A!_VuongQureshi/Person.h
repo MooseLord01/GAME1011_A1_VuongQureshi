@@ -1,6 +1,10 @@
 #pragma once
 #ifndef __PERSON__
 #define __PERSON__
+
+#include <iostream>
+#include <fstream>
+#include <ctime>
 #include <string>
 
 class Person
@@ -14,7 +18,7 @@ public:
 	Person();
 	Person(const std::string name, int age);
 	virtual ~Person();
-	virtual void DisplayInformation();
+	virtual void DisplayInformation() = 0;
 	
 	//Setters
 	void setAge(int age);
