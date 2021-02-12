@@ -29,3 +29,4 @@ const std::string Student::getCollegeName() { return collegeName; }
 const std::string Student::getProgramName() { return programName; }
 const int Student::getSemesterNum() { return semesterNum; }
 const bool Student::getGamer() { return isGamer; }
+
