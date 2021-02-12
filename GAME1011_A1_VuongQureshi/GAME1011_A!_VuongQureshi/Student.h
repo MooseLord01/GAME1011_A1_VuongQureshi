@@ -27,7 +27,7 @@ public:
 	void setProgramName(std::string programName);
 	void setSemesterName(int semesterNum);
 	void setGamer(bool status);
-	
+
 	// Getters
 	const std::string getCollegeName();
 	const std::string getProgramName();

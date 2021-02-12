@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Year 2 - Semester 2\Advanced Programming\Assignments\GAME1011_A1_VuongQureshi\GAME1011_A1_VuongQureshi\GAME1011_A!_VuongQureshi\NonGamingStudent.cpp" />
     <ClCompile Include="GamingStudent.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Person.cpp" />

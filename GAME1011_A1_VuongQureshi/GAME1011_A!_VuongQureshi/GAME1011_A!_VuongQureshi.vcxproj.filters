@@ -30,6 +30,9 @@
     <ClCompile Include="Survey.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Year 2 - Semester 2\Advanced Programming\Assignments\GAME1011_A1_VuongQureshi\GAME1011_A1_VuongQureshi\GAME1011_A!_VuongQureshi\NonGamingStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
