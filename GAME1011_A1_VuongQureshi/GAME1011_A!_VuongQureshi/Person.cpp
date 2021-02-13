@@ -10,9 +10,15 @@ Person::Person() {
 	name = "";
 	temp = rand() % 36;
 	name += firstName[temp] + " ";
+	std::cout << "Temp first name: " << temp << std::endl;
 
+	
 	temp = rand() % 36;
 	name += lastNames[temp];
+	
+	std::cout << "Temp last name: " << temp << std::endl;
+	std::cout << "Name: " << name << std::endl;
+	std::cout << "Age: " << age << std::endl;
 }
 
 Person::~Person() {}

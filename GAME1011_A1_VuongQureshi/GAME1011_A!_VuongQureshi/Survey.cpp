@@ -5,7 +5,7 @@ Survey::Survey(int participants) {
 
 	numOfStudents = participants;
 
-	this->participants = new Student[numOfStudents];
+	this->participants = new Person*[numOfStudents];
 
 	// This sets all of the values to 0 so they can be incremented properly
 	numOfNonGamers = 0;
@@ -19,9 +19,6 @@ Survey::Survey(int participants) {
 		favouriteDevicePos[x] = 0;
 }
 
-// Destructor to delete participants array
-//Survey::~Survey() { delete []this->participants; }
-
 // I changed this file
 void Survey::addParticipant(int spot, Student* student) {
 	participants[spot] = student;
@@ -32,9 +29,8 @@ void Survey::processData() {
 	for (int x = 0; x < numOfStudents; x++) {
 
 		// Checks to see if the student is a gamer or not and increment appropriate variables accordingly	
-		if (participants[x].getGamer()) {
+		if (static_cast<Student*>(participants[x])->getGamer()) {
 			numOfGamers++;
-			//averageHoursGaming += static_cast<GamingStudent*>(participants[x])->getGamerHours();
 		}
 	}
 }
@@ -51,7 +47,7 @@ int Survey::getNumOfGamers() { return numOfGamers; }
 int Survey::getAverageHoursGaming() { return averageHoursGaming; }
 std::string Survey::getFavouriteDevice() { return favouriteDevice; }
 
-std::string Survey::getName(int spot) { return participants[spot].getName(); }
+std::string Survey::getName(int spot) { return participants[spot]->getName(); }
 
 std::ostream& operator<<(std::ostream& out, Survey survey)
 {

@@ -47,17 +47,12 @@ int main()
 
 		// If toGameOrNotToGame is even they student will be a gamer 
 		if (toGameOrNotToGame % 2 != 0) {
-			NonGamingStudent* stu = new NonGamingStudent();
-			std::cout << "Inside if statement: " << stu->getName() << std::endl;
-			survey.addParticipant(x, stu);
+			
+			survey.addParticipant(x, new NonGamingStudent());
 		}
 		else {
-			GamingStudent* stu = new GamingStudent();
-			std::cout << "Inside if statement: " << stu->getName() << std::endl;
-			survey.addParticipant(x, stu);
+			survey.addParticipant(x, new GamingStudent());
 		}
-
-		std::cout << "Outside if statement: " << survey.getName(x) << std::endl;
 	}
 
 	std::cout << survey;

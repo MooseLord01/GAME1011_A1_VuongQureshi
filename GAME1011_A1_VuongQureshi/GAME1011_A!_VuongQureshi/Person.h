@@ -15,7 +15,7 @@ protected:
 
 	std::string firstName[36] = {
 		"Cassity",
-		"Jullie",
+		"Mustafa",
 		"Olivia",
 		"Tristan",
 		"Jamari",
@@ -76,7 +76,7 @@ protected:
 		"Parker",
 		"Evans",
 		"Edwards",
-		"Collins"
+		"Dat"
 	};
 
 public:

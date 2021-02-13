@@ -22,8 +22,6 @@ Student::Student(Student* stu) {
 	semesterNum = stu->getSemesterNum();
 }
 
-void Student::displayInfo() { }
-
 // Setters
 void Student::setCollegeName(const std::string collegeName) { this->collegeName = collegeName; }
 void Student::setProgramName(const std::string programName) { this->programName = programName; }

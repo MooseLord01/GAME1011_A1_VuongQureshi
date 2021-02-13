@@ -25,11 +25,10 @@ private:
 	int favouriteDevicePos[8];		// This will hold the amount of students that prefer a specific console
 	std::string favouriteDevice;	// This will hold the name of the console that was the most popular
 
-	Student* participants;
+	Person** participants;
 
 public:
 	Survey(int participants);
-	//~Survey();
 
 	void addParticipant(int spot, Student* student);
 	void processData();
@@ -49,7 +48,7 @@ public:
 	std::string getFavouriteDevice();
 	std::string getName(int spot);
 
-	// Overloaded operator
+	// Overloaded cout operator
 	friend std::ostream& operator<<(std::ostream& out, Survey survey);
 };
 

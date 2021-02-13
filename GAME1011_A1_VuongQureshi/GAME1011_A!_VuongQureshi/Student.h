@@ -26,7 +26,6 @@ protected:
 public:
 	Student();
 	Student(Student* stu);
-	void displayInfo() override;
 
 	// Setters
 	void setCollegeName(std::string collegeName);
