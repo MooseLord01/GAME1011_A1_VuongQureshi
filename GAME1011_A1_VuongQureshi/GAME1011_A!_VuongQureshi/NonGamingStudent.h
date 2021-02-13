@@ -5,37 +5,39 @@
 
 class NonGamingStudent : public Student
 {
-private:
+protected:
 
-	//Streaming Services Array
-	std::string listofStreamingServices[14] = {
-		"Netflix",
-		"Disney+",
-		"Twitch",
-		"YouTube",
-		"Crunchyroll",
-		"Hulu",
-		"Amazon Prime Video",
-		"FireFox", "HBO Max",
-		"Sling TV",
-		"Vudu",
-		"ESPN+",
-		"Apple TV"
-	};
+    //Streaming Services Array
+    std::string listofStreamingServices[14] = {
+        "Netflix",
+        "Disney+",
+        "Twitch",
+        "YouTube",
+        "Crunchyroll",
+        "Hulu",
+        "Prime Video",
+        "FireFox",
+        "HBO Max",
+        "Sling TV",
+        "Vudu",
+        "ESPN+",
+        "Apple TV"
+    };
 
-	std::string streamingServices;
-	int streamHours;
+    std::string streamingService;  // This will hold the student's favourite streaming service
+    int positionOfService;          // This will hold the position in the array of streaming services that gets assigned to the student
+    int streamingHours;             // This will hold the amount of time the student spends on non gaming entertainment in a week
 
 public:
-	NonGamingStudent(std::string name);
-	void getInformation() override;
+    NonGamingStudent();
+    void displayInfo() final;
 
-	//Setters
-	void setStreamServices(std::string service);
-	void setStreamHours(int hours);
+    //Setters
+    void setStreamServices(std::string service);
+    void setStreamHours(int hours);
 
-	//Getters
-	std::string getStreamServices();
-	int getStreamHours();
+    //Getters
+    std::string getStreamServices();
+    int getStreamHours();
 };
 #endif

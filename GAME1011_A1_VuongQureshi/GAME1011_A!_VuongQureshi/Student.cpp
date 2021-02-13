@@ -1,9 +1,7 @@
 #include "Student.h"
 
-Student::Student() { } // Default constructor
-
 // Non-default constructor
-Student::Student(std::string name) : Person(name) {
+Student::Student() {
 	srand(std::time(NULL));
 
 	// Randomly set collegeName and programName to a random value taken from their respective lists
@@ -14,9 +12,17 @@ Student::Student(std::string name) : Person(name) {
 	this->programName = listOfPrograms[temp];
 
 	// Randomly assign the current semester number to the student
-	temp = rand()% 4 + 1; 
+	temp = rand() % 4 + 1;
 	this->semesterNum = temp;
 }
+
+Student::Student(Student* stu) {
+	collegeName = stu->getCollegeName();
+	programName = stu->getProgramName();
+	semesterNum = stu->getSemesterNum();
+}
+
+void Student::displayInfo() { }
 
 // Setters
 void Student::setCollegeName(const std::string collegeName) { this->collegeName = collegeName; }
@@ -29,4 +35,3 @@ const std::string Student::getCollegeName() { return collegeName; }
 const std::string Student::getProgramName() { return programName; }
 const int Student::getSemesterNum() { return semesterNum; }
 const bool Student::getGamer() { return isGamer; }
-

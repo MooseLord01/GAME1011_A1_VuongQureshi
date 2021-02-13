@@ -1,15 +1,18 @@
 #include "Person.h"
 
-Person::Person() { } // Default constructor
-
-Person::Person(const std::string name) {
+Person::Person() {
 	srand(time(NULL));
-	
-	this->name = name;
 
 	// Randomly set the student's age between 17-27
 	int temp = rand() % 10 + 17;
 	this->age = temp;
+
+	name = "";
+	temp = rand() % 36;
+	name += firstName[temp] + " ";
+
+	temp = rand() % 36;
+	name += lastNames[temp];
 }
 
 Person::~Person() {}

@@ -9,40 +9,81 @@
 
 class Person
 {
-private:
-	int age;                // This will hold the age of the person
-	std::string name;       // This will hold the name of the person
-	std::string firstName;  // This will hold the persons first name
-	std::string lastName;   // This will hold the persons last name
+protected:
+	int age;              // This will hold the age of the person
+	std::string name;     // This will hold the name of the person
 
-	//First Name Array
-	std::string listOfFirstNames[50] = {
-		"Netflix",
-		"Disney+",
-		"Twitch",
-		"YouTube",
-		"Crunchyroll",
-		"Hulu",
-		"Amazon Prime Video",
-		"FireFox", "HBO Max",
-		"Sling TV",
-		"Vudu",
-		"ESPN+",
-		"Apple TV"
+	std::string firstName[36] = {
+		"Cassity",
+		"Jullie",
+		"Olivia",
+		"Tristan",
+		"Jamari",
+		"Liam",
+		"Noah",
+		"Alex",
+		"Punjeet",
+		"Madison",
+		"Cathy",
+		"Isaac",
+		"Phillip",
+		"Daniel",
+		"Cody",
+		"Coda",
+		"Sypha",
+		"Douglas",
+		"Damien",
+		"Elizabeth",
+		"Francis",
+		"Zachary",
+		"Penolope",
+		"Alexis",
+		"Simran",
+		"Jane",
+		"Letica",
+		"Mathew",
+		"Maya",
+		"Caroline",
+		"Evan",
+		"Evaline",
+		"Catherine",
+		"Jonathan",
+		"Jake"
 	};
 
-    //Last Name Array
-	std::string listOfLastNames[50] = {
-
+	std::string lastNames[36] = {
+		"Hall",
+		"Allen",
+		"Young",
+		"Hernandez",
+		"King",
+		"Wright",
+		"Lopez",
+		"Hill",
+		"Scott",
+		"Green",
+		"Adams",
+		"Baker",
+		"Gonzalez",
+		"Nelson",
+		"Carter",
+		"Mitchell",
+		"Perez",
+		"Roberts",
+		"Turner",
+		"Phillips",
+		"Campbell",
+		"Parker",
+		"Evans",
+		"Edwards",
+		"Collins"
 	};
 
 public:
-
 	Person();
-	Person(const std::string name);
 	virtual ~Person();
-	virtual void getInformation() = 0;
-	
+	virtual void displayInfo() = 0;
+
 	//Setters
 	void setAge(int age);
 	void setName(const std::string name);

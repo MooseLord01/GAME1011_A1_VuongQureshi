@@ -3,15 +3,63 @@
 #include "Person.h"
 #include "Student.h"
 #include "GamingStudent.h"
+#include "NonGamingStudent.h"
+#include "Survey.h"
 
 int main()
 {
-	std::cout << "                               [-----[Welcome to the survey]-----]" << std::endl;
+	bool proceed = false;	// This will hold whether or not the user wants to process the data in the survey yet
+	int participants;		// This will hold the amount of participants in the survey
+
+	// Prints out Welcome message
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+	std::cout << "                               [-----[";
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+	std::cout << "Welcome to the survey";
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+	std::cout << "]-----]" << std::endl;
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 	std::cout << "This program gathers data about the entertainment consumption habits between college students." << std::endl;
 
-	GamingStudent stu("Joe Swanson");
-	stu.getInformation();
-	getchar();
+	// Asks the user how many participants are in the survey
+	while (proceed == false) {
+		std::cout << "How many students are participating in the survey(1-500)? ";
 
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
+		std::cin >> participants;
+
+		if (participants > 0 && participants < 501)
+			proceed = true;
+
+		system("CLS");
+	}
+
+	Survey survey(participants);
+
+	// This generates and adds the necessary amount of participants to the survey class
+	for (int x = 0; x < participants; x++) {
+		srand(time(NULL));
+
+		int toGameOrNotToGame = rand() % 50;	// This will determine if the student being created is a gamer or not
+
+		// If toGameOrNotToGame is even they student will be a gamer 
+		if (toGameOrNotToGame % 2 != 0) {
+			NonGamingStudent* stu = new NonGamingStudent();
+			std::cout << "Inside if statement: " << stu->getName() << std::endl;
+			survey.addParticipant(x, stu);
+		}
+		else {
+			GamingStudent* stu = new GamingStudent();
+			std::cout << "Inside if statement: " << stu->getName() << std::endl;
+			survey.addParticipant(x, stu);
+		}
+
+		std::cout << "Outside if statement: " << survey.getName(x) << std::endl;
+	}
+
+	std::cout << survey;
 	return 0;
 }
