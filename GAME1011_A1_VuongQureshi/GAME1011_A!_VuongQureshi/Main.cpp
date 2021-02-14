@@ -7,12 +7,11 @@
 #include "NonGamingStudent.h"
 #include "Survey.h"
 
-int main()
-{
-	srand(time(NULL));
+int main() {
+	
+	srand(std::time(NULL));
 	bool proceed = false;	// This will hold whether or not the user wants to process the data in the survey yet
 	int participants;		// This will hold the amount of participants in the survey
-	int temp;
 
 	// Prints out Welcome message
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
