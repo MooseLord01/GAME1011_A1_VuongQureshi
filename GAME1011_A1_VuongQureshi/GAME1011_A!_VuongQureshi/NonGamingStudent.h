@@ -21,7 +21,6 @@ protected:
         "Vudu",
         "ESPN+",
         "Apple TV",
-    	"Tubi"
     };
 
     std::string streamingService;  // This will hold the student's favourite streaming service

@@ -18,7 +18,7 @@ Survey::Survey(int participants) {
 	averageAgeNonGamer = 0;
 	averageHoursEntertainment = 0;
 
-	for (int x = 0; x < 14; x++)
+	for (int x = 0; x < 13; x++)
 		favouriteServicePos[x] = 0;
 
 	for (int x = 0; x < 8; x++)
@@ -83,7 +83,7 @@ void Survey::processData() {
 	votes = 0;
 
 	// This will determine the most popular streaming service 
-	for (int x = 0; x < 14; x++)
+	for (int x = 0; x < 13; x++)
 	{
 		if (votes < favouriteServicePos[x]) {
 			votes = favouriteServicePos[x];

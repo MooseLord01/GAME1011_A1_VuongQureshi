@@ -22,7 +22,6 @@ protected:
 	int gamerHours;			// This will hold the amount of hours the student has spent gaming 
 
 public:
-
 	GamingStudent();
 
 	void displayInfo() final;

@@ -2,7 +2,7 @@
 
 NonGamingStudent::NonGamingStudent() {
     //The program will randomly pick favorite streaming services
-    positionOfService = rand() % 14;
+    positionOfService = rand() % 13;
     streamingService = listofStreamingServices[positionOfService];
 
     //This will randomly assign the hours the student spends using streaming services
