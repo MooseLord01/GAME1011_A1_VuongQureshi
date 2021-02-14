@@ -4,8 +4,8 @@
 
 #include <iostream>
 #include <cstdlib>  
-#include <ctime>
 #include <string>
+#include <cmath>
 
 class Person
 {

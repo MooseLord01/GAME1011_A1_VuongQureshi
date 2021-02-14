@@ -1,8 +1,6 @@
 #include "NonGamingStudent.h"
 
 NonGamingStudent::NonGamingStudent() {
-    //srand(time(NULL));
-
     //The program will randomly pick favorite streaming services
     positionOfService = rand() % 14;
     streamingService = listofStreamingServices[positionOfService];

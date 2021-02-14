@@ -140,22 +140,6 @@ std::ostream& operator<<(std::ostream& out, Survey survey)
 	out << " ||" << std::endl;
 
 
-	// Average age
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
-	out << " ||";
-
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
-	out << " Average age ";
-
-	out << std::setw(42) << std::setfill(' ');
-
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
-	// << survey.getAverageAge();
-
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
-	out << " ||" << std::endl;
-
-
 	// Divider
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
 	out << " ||•--•--•--•--•--•--•--•--•--•--•--•--•--•--•--•--•--•--•-||" << std::endl;
@@ -172,6 +156,22 @@ std::ostream& operator<<(std::ostream& out, Survey survey)
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
 	out << survey.getNumOfGamers();
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+	out << " ||" << std::endl;
+
+
+	// Average Gamer age
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+	out << " ||";
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+	out << " Average age ";
+
+	out << std::setw(42) << std::setfill(' ');
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
+	out << survey.getAverageAgeGamer();
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
 	out << " ||" << std::endl;
@@ -225,6 +225,22 @@ std::ostream& operator<<(std::ostream& out, Survey survey)
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
 	out << survey.getNumOfNonGamers();
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+	out << " ||" << std::endl;
+
+
+	// Average Nongamer age
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+	out << " ||";
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+	out << " Average age ";
+
+	out << std::setw(42) << std::setfill(' ');
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
+	out << survey.getAverageAgeGamer();
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
 	out << " ||" << std::endl;

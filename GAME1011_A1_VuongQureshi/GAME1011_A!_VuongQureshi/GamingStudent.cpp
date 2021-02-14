@@ -1,8 +1,6 @@
 #include "GamingStudent.h"
 
 GamingStudent::GamingStudent() {
-	//srand(time(NULL));
-
 	// This randomly assigns a favourite game device
 	positionOfDevice = rand() % 8;
 	gameDevice = listOfGameDevice[positionOfDevice];

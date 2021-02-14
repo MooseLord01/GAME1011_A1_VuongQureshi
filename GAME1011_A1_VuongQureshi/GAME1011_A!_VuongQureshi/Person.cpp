@@ -1,8 +1,6 @@
 #include "Person.h"
 
 Person::Person() {
-	//srand(time(NULL));
-
 	// Randomly set the student's age between 17-27
 	int temp = rand() % 10 + 17;
 	this->age = temp;

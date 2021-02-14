@@ -2,8 +2,6 @@
 
 // Non-default constructor
 Student::Student() {
-	//srand(time(NULL));
-
 	// Randomly set collegeName and programName to a random value taken from their respective lists
 	int temp = rand() % 10;
 	this->collegeName = listOfCollegeNames[temp];
