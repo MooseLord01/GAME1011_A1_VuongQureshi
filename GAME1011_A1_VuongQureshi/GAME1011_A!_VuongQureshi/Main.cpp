@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include <Windows.h>
 #include "Person.h"
 #include "Student.h"
@@ -8,6 +9,7 @@
 
 int main()
 {
+	//srand(time(NULL));
 	bool proceed = false;	// This will hold whether or not the user wants to process the data in the survey yet
 	int participants;		// This will hold the amount of participants in the survey
 
@@ -36,17 +38,16 @@ int main()
 
 		system("CLS");
 	}
-
+	
 	Survey survey(participants);
 
 	// This generates and adds the necessary amount of participants to the survey class
 	for (int x = 0; x < participants; x++) {
-		srand(time(NULL));
 
-		int toGameOrNotToGame = rand() % 50;	// This will determine if the student being created is a gamer or not
+		int toGameOrNotToGame = rand() % 2;	// This will determine if the student being created is a gamer or not
 
 		// If toGameOrNotToGame is even they student will be a gamer 
-		if (toGameOrNotToGame % 2 != 0) {
+		if (toGameOrNotToGame == 0) {
 			
 			survey.addParticipant(x, new NonGamingStudent());
 		}
@@ -55,6 +56,7 @@ int main()
 		}
 	}
 
+	survey.processData();
 	std::cout << survey;
 	return 0;
 }

@@ -33,6 +33,7 @@ public:
 	void setGamerHours(int hours);
 
 	// Getters
+	const std::string getListOfDevices(int spot);
 	const std::string getGameDevice();
 	const int getPositionOfDevice();
 	const int getGamerHours();

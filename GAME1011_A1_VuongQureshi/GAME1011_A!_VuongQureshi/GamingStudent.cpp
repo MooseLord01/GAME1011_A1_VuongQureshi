@@ -1,7 +1,7 @@
 #include "GamingStudent.h"
 
 GamingStudent::GamingStudent() {
-	srand(time(NULL));
+	//srand(time(NULL));
 
 	// This randomly assigns a favourite game device
 	positionOfDevice = rand() % 8;
@@ -24,6 +24,7 @@ void GamingStudent::setGameDevice(const std::string console) { gameDevice = cons
 void GamingStudent::setGamerHours(const int hours) { gamerHours = hours; }
 
 // Getters
+const std::string GamingStudent::getListOfDevices(int spot) { return listOfGameDevice[spot]; }
 const std::string GamingStudent::getGameDevice() { return gameDevice; }
 const int GamingStudent::getPositionOfDevice() { return positionOfDevice; }
 const int GamingStudent::getGamerHours() { return gamerHours; }

@@ -38,6 +38,8 @@ public:
 
     //Getters
     std::string getStreamServices();
+    std::string getListOfServices(int spot);
+    int getPositionOfService();
     int getStreamHours();
 };
 #endif

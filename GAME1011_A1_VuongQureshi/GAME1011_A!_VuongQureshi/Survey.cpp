@@ -1,5 +1,7 @@
 #include "Survey.h"
 
+#include "NonGamingStudent.h"
+
 // Constructor
 Survey::Survey(int participants) {
 
@@ -8,10 +10,13 @@ Survey::Survey(int participants) {
 	this->participants = new Person*[numOfStudents];
 
 	// This sets all of the values to 0 so they can be incremented properly
-	numOfNonGamers = 0;
-	averageHoursEntertainment = 0;
 	numOfGamers = 0;
+	averageAgeGamer = 0;
 	averageHoursGaming = 0;
+	
+	numOfNonGamers = 0;
+	averageAgeNonGamer = 0;
+	averageHoursEntertainment = 0;
 
 	for (int x = 0; x < 14; x++)
 		favouriteServicePos[x] = 0;
@@ -31,23 +36,69 @@ void Survey::processData() {
 		// Checks to see if the student is a gamer or not and increment appropriate variables accordingly	
 		if (static_cast<Student*>(participants[x])->getGamer()) {
 			numOfGamers++;
+			averageAgeGamer += participants[x]->getAge();
+			averageHoursGaming += static_cast<GamingStudent*>(participants[x])->getGamerHours();
+			++favouriteDevicePos[static_cast<GamingStudent*>(participants[x])->getPositionOfDevice()];
+		}
+		else
+		{
+			numOfNonGamers++;
+			averageAgeNonGamer += participants[x]->getAge();
+			averageHoursEntertainment += static_cast<NonGamingStudent*>(participants[x])->getStreamHours();
+			++favouriteServicePos[static_cast<NonGamingStudent*>(participants[x])->getPositionOfService()];
 		}
 	}
+	
+	if (numOfGamers != 0) {
+		averageAgeGamer /= numOfGamers;
+		averageHoursGaming /= numOfGamers;
+	}
+	else {
+		averageAgeGamer = 0;
+		averageHoursGaming = 0;
+	}
+	if (numOfNonGamers != 0) {
+		averageAgeNonGamer /= numOfNonGamers;
+		averageHoursEntertainment /= numOfNonGamers;
+	}
+	else {
+		averageAgeNonGamer = 0;
+		averageHoursEntertainment = 0;
+	}
+		
+	int mostPopular = 0; // This is a temp variable to compare the amount of votes for a specific console/streaming service
+
+	// This will determine the most popular console 
+	for (int x = 0; x < 8; x++)
+	{
+		mostPopular < favouriteDevicePos[x] ? mostPopular = x : mostPopular; 
+	}
+	favouriteDevice = static_cast<GamingStudent*>(participants[0])->getListOfDevices(mostPopular);
+
+	mostPopular = 0;
+	// This will determine the most popular streaming service 
+	for (int x = 0; x < 14; x++)
+	{
+		mostPopular < favouriteServicePos[x] ? mostPopular = x : mostPopular; 
+	}
+	favouriteService = static_cast<NonGamingStudent*>(participants[0])->getListOfServices(mostPopular);	
 }
 
 // getters
 int Survey::getNumOfStudents() { return numOfStudents; }
-int Survey::getAverageAge() { return averageAge; }
 
 int Survey::getNumOfNonGamers() { return numOfNonGamers; }
-int Survey::getAverageHoursEntertainment() { return averageHoursEntertainment; }
+double Survey::getAverageAgeNonGamer() { return averageAgeGamer; }
+double Survey::getAverageHoursEntertainment() { return averageHoursEntertainment; }
 std::string Survey::getFavouriteService() { return favouriteService; }
 
 int Survey::getNumOfGamers() { return numOfGamers; }
-int Survey::getAverageHoursGaming() { return averageHoursGaming; }
+double Survey::getAverageAgeGamer() { return averageAgeNonGamer; }
+double Survey::getAverageHoursGaming() { return averageHoursGaming; }
 std::string Survey::getFavouriteDevice() { return favouriteDevice; }
 
 std::string Survey::getName(int spot) { return participants[spot]->getName(); }
+Student* Survey::getStudent(int spot) { return static_cast<Student*>(participants[spot]); }
 
 std::ostream& operator<<(std::ostream& out, Survey survey)
 {
@@ -98,7 +149,7 @@ std::ostream& operator<<(std::ostream& out, Survey survey)
 	out << std::setw(42) << std::setfill(' ');
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
-	out << survey.getAverageAge();
+	// << survey.getAverageAge();
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
 	out << " ||" << std::endl;

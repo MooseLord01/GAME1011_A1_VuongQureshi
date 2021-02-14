@@ -10,19 +10,20 @@
 class Survey
 {
 private:
-	int averageAge;					// This will hold the average age of all the participants
 	int numOfStudents;				// This will hold the amount of students in the survey
 
 	// Non-gamer related variables
 	int numOfNonGamers;				// This will hold the amount of non-gaming students in the survey	  
-	int averageHoursEntertainment;	// This will hold the average amount of hours spent consuming non-gaming entertainment
 	int favouriteServicePos[14];	// This will hold the amount of students that prefer a specific streaming service
+	double averageAgeNonGamer;			// This will hold the average age of the non gaming students
+	double averageHoursEntertainment;	// This will hold the average amount of hours spent consuming non-gaming entertainment
 	std::string favouriteService;	// This will hold the name of the streaming service that was the most popular 
 
 	// Gamer related variables
 	int numOfGamers;				// This will hold the amount of gaming students in the survey
-	int averageHoursGaming;			// This will hold the average amount of hours spent gaming 
 	int favouriteDevicePos[8];		// This will hold the amount of students that prefer a specific console
+	double averageAgeGamer;			// This will hold the average age of the gaming students
+	double averageHoursGaming;			// This will hold the average amount of hours spent gaming 
 	std::string favouriteDevice;	// This will hold the name of the console that was the most popular
 
 	Person** participants;
@@ -34,19 +35,22 @@ public:
 	void processData();
 
 	// getters
-	int getAverageAge();
 	int getNumOfStudents();
 
 	int getNumOfNonGamers();
-	int getAverageHoursEntertainment();
 	int getFavouriteServicePos();
+	double getAverageAgeNonGamer();
+	double getAverageHoursEntertainment();
 	std::string getFavouriteService();
 
 	int getNumOfGamers();
-	int getAverageHoursGaming();
 	int getFavouriteDevicePos();
+	double getAverageAgeGamer();
+	double getAverageHoursGaming();
 	std::string getFavouriteDevice();
+	
 	std::string getName(int spot);
+	Student* getStudent(int spot);
 
 	// Overloaded cout operator
 	friend std::ostream& operator<<(std::ostream& out, Survey survey);

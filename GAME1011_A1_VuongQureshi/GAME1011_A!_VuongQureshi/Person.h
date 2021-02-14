@@ -3,7 +3,7 @@
 #define __PERSON__
 
 #include <iostream>
-#include <fstream>
+#include <cstdlib>  
 #include <ctime>
 #include <string>
 
@@ -12,7 +12,6 @@ class Person
 protected:
 	int age;              // This will hold the age of the person
 	std::string name;     // This will hold the name of the person
-
 	std::string firstName[36] = {
 		"Cassity",
 		"Mustafa",

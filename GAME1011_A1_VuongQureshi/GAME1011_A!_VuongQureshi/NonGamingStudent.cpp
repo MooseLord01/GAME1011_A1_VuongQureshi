@@ -1,7 +1,7 @@
 #include "NonGamingStudent.h"
 
 NonGamingStudent::NonGamingStudent() {
-    srand(time(NULL));
+    //srand(time(NULL));
 
     //The program will randomly pick favorite streaming services
     positionOfService = rand() % 14;
@@ -29,4 +29,6 @@ void NonGamingStudent::setStreamHours(int hours) { streamingHours = hours; }
 
 // Getters
 int NonGamingStudent::getStreamHours() { return streamingHours; }
+int NonGamingStudent::getPositionOfService() { return positionOfService; }
 std::string NonGamingStudent::getStreamServices() { return streamingService; }
+std::string NonGamingStudent::getListOfServices(int spot) { return listofStreamingServices[spot]; }
