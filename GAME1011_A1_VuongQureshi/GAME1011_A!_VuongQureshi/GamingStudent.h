@@ -1,7 +1,6 @@
 #pragma once
 #ifndef __GAMINGSTUDENT_H__
 #define __GAMINGSTUDENT_H__
-
 #include "Student.h"
 
 class GamingStudent : public Student

@@ -20,6 +20,7 @@ Survey::Survey(int participants) {
 
 	for (int x = 0; x < 14; x++)
 		favouriteServicePos[x] = 0;
+
 	for (int x = 0; x < 8; x++)
 		favouriteDevicePos[x] = 0;
 }
@@ -76,6 +77,7 @@ void Survey::processData() {
 	favouriteDevice = static_cast<GamingStudent*>(participants[0])->getListOfDevices(mostPopular);
 
 	mostPopular = 0;
+
 	// This will determine the most popular streaming service 
 	for (int x = 0; x < 14; x++)
 	{
@@ -86,7 +88,6 @@ void Survey::processData() {
 
 // getters
 int Survey::getNumOfStudents() { return numOfStudents; }
-
 int Survey::getNumOfNonGamers() { return numOfNonGamers; }
 double Survey::getAverageAgeNonGamer() { return averageAgeGamer; }
 double Survey::getAverageHoursEntertainment() { return averageHoursEntertainment; }
@@ -240,7 +241,7 @@ std::ostream& operator<<(std::ostream& out, Survey survey)
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
 	out << survey.getFavouriteService();
-
+	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
 	out << " ||" << std::endl;
 

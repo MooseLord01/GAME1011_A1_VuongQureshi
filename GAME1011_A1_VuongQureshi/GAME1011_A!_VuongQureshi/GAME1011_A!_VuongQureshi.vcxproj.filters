@@ -41,13 +41,13 @@
     <ClInclude Include="GamingStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NonGamingStudent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Student.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Survey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NonGamingStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

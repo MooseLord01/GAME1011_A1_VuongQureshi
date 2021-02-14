@@ -9,7 +9,7 @@
 
 int main()
 {
-	//srand(time(NULL));
+	srand(time(NULL));
 	bool proceed = false;	// This will hold whether or not the user wants to process the data in the survey yet
 	int participants;		// This will hold the amount of participants in the survey
 

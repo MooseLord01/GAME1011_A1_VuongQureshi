@@ -61,7 +61,6 @@ protected:
 		"Hill",
 		"Scott",
 		"Green",
-		"Adams",
 		"Baker",
 		"Gonzalez",
 		"Nelson",
@@ -75,7 +74,19 @@ protected:
 		"Parker",
 		"Evans",
 		"Edwards",
-		"Dat"
+		"Dat",
+		"Cass",
+		"Hasan",
+		"Kat",
+		"Wally",
+		"Muhammad",
+		"Nelson",
+		"Alex",
+		"Nick",
+		"Hegfoege",
+		"Joshua",
+		"Swonker",
+		"Im gonna slit my dic"
 	};
 
 public:
