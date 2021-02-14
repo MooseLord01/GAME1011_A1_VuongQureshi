@@ -25,7 +25,6 @@ Survey::Survey(int participants) {
 		favouriteDevicePos[x] = 0;
 }
 
-// I changed this file
 void Survey::addParticipant(int spot, Student* student) {
 	participants[spot] = student;
 }
@@ -49,7 +48,7 @@ void Survey::processData() {
 			++favouriteServicePos[static_cast<NonGamingStudent*>(participants[x])->getPositionOfService()];
 		}
 	}
-	
+
 	if (numOfGamers != 0) {
 		averageAgeGamer /= numOfGamers;
 		averageHoursGaming /= numOfGamers;
@@ -66,13 +65,14 @@ void Survey::processData() {
 		averageAgeNonGamer = 0;
 		averageHoursEntertainment = 0;
 	}
-		
+	
 	int mostPopular = 0; // This is a temp variable to compare the amount of votes for a specific console/streaming service
 
 	// This will determine the most popular console 
 	for (int x = 0; x < 8; x++)
 	{
 		mostPopular < favouriteDevicePos[x] ? mostPopular = x : mostPopular; 
+
 	}
 	favouriteDevice = static_cast<GamingStudent*>(participants[0])->getListOfDevices(mostPopular);
 
@@ -240,7 +240,7 @@ std::ostream& operator<<(std::ostream& out, Survey survey)
 	out << std::setw(42) << std::setfill(' ');
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
-	out << survey.getAverageAgeGamer();
+	out << survey.getAverageAgeNonGamer();
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
 	out << " ||" << std::endl;

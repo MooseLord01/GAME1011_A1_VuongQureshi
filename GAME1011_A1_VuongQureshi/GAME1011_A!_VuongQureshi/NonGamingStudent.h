@@ -6,9 +6,8 @@
 class NonGamingStudent : public Student
 {
 protected:
-
     //Streaming Services Array
-    std::string listofStreamingServices[14] = {
+    std::string listofStreamingServices[13] = {
         "Netflix",
         "Disney+",
         "Twitch",

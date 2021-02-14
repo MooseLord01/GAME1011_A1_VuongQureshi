@@ -47,7 +47,8 @@ protected:
 		"Evaline",
 		"Catherine",
 		"Jonathan",
-		"Jake"
+		"Jake",
+		"Wally"
 	};
 
 	std::string lastNames[36] = {
@@ -86,7 +87,7 @@ protected:
 		"Hegfoege",
 		"Joshua",
 		"Swonker",
-		"Im gonna slit my dic"
+		"Pain"
 	};
 
 public:
