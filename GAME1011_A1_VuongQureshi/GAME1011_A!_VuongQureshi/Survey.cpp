@@ -25,7 +25,6 @@ Survey::Survey(int participants) {
 		favouriteDevicePos[x] = 0;
 }
 
-// I changed this file
 void Survey::addParticipant(int spot, Student* student) {
 	participants[spot] = student;
 }
@@ -67,23 +66,31 @@ void Survey::processData() {
 		averageHoursEntertainment = 0;
 	}
 		
-	int mostPopular = 0; // This is a temp variable to compare the amount of votes for a specific console/streaming service
-
+	int mostPopular = 0;	// This is a temp variable to compare the amount of votes for a specific console/streaming service
+	int votes = 0;			// This will hold the number of votes for a specific console/service
+	
 	// This will determine the most popular console 
 	for (int x = 0; x < 8; x++)
 	{
-		mostPopular < favouriteDevicePos[x] ? mostPopular = x : mostPopular; 
+		if (votes < favouriteDevicePos[x]) {
+			votes = favouriteDevicePos[x];
+			mostPopular = x;
+		}
 	}
-	favouriteDevice = static_cast<GamingStudent*>(participants[0])->getListOfDevices(mostPopular);
-
+	favouriteDevice = (new GamingStudent)->getListOfDevices(mostPopular);
+	
 	mostPopular = 0;
+	votes = 0;
 
 	// This will determine the most popular streaming service 
 	for (int x = 0; x < 14; x++)
 	{
-		mostPopular < favouriteServicePos[x] ? mostPopular = x : mostPopular; 
+		if (votes < favouriteServicePos[x]) {
+			votes = favouriteServicePos[x];
+			mostPopular = x;
+		}
 	}
-	favouriteService = static_cast<NonGamingStudent*>(participants[0])->getListOfServices(mostPopular);	
+	favouriteService = (new NonGamingStudent)->getListOfServices(mostPopular);
 }
 
 // getters
@@ -240,7 +247,7 @@ std::ostream& operator<<(std::ostream& out, Survey survey)
 	out << std::setw(42) << std::setfill(' ');
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
-	out << survey.getAverageAgeGamer();
+	out << survey.getAverageAgeNonGamer();
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
 	out << " ||" << std::endl;
